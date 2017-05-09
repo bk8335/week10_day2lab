@@ -4,6 +4,9 @@ var ShoppingBasket = function(){
   ShoppingBasket.prototype = {
     add: function(item) {
       this.trolley.push(item);
+    },
+    remove: function() {
+      this.trolley.pop();
     }
   };
 

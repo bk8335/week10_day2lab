@@ -19,4 +19,11 @@ describe("Shopping Basket", function(){
     assert.equal(2, shoppingBasket.trolley.length);
   })
 
+  it("can remove item from shopping basket", function() {
+    shoppingBasket.add(new Item("xbox", 200));
+    shoppingBasket.add(new Item("switch", 250));
+    shoppingBasket.remove();
+    assert.equal(1, shoppingBasket.trolley.length);
+  })
+
 });
