@@ -26,4 +26,15 @@ describe("Shopping Basket", function(){
     assert.equal(1, shoppingBasket.trolley.length);
   })
 
+  it("10% discount on total over £20", function() {
+    shoppingBasket.add(new Item("xbox", 200));
+    shoppingBasket.add(new Item("switch", 250));
+    assert.equal(405, shoppingBasket.checkout() )
+  })
+
+  it("10% discount doesn't apply under £20", function() {
+    shoppingBasket.add(new Item("big mac", 5));
+    assert.equal(5, shoppingBasket.checkout() );
+  })
+
 });
