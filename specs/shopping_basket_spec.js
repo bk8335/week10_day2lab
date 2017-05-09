@@ -6,7 +6,7 @@ describe("Shopping Basket", function(){
   var shoppingBasket;
 
   beforeEach(function(){
-    shoppingBasket = new ShoppingBasket();
+    shoppingBasket = new ShoppingBasket(false);
   });
 
   it("trolley should be empty", function(){
@@ -35,6 +35,13 @@ describe("Shopping Basket", function(){
   it("10% discount doesn't apply under £20", function() {
     shoppingBasket.add(new Item("big mac", 5));
     assert.equal(5, shoppingBasket.checkout() );
+  })
+
+  it("discounts 5% with loyalty card", function() {
+    var shoppingBasket2 = new ShoppingBasket(true)
+    shoppingBasket2.add(new Item("xbox", 200));
+    shoppingBasket2.add(new Item("switch", 250));
+    assert.equal(384.75, shoppingBasket2.checkout() );
   })
 
 });
