@@ -4,5 +4,4 @@ var Item = function(description, price, bogof) {
   this.bogof = bogof;
 }
 
-
 module.exports = Item;
